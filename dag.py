@@ -10,6 +10,13 @@ def sleep(time):
 def welcome():
   print('Hello!')
 
+default_args = {
+    "owner": "Pablo",
+    "start_date": datetime(2020, 7, 6),
+    "retries": 3,
+    "retry_delay": timedelta(minutes=5),
+}
+
 dag = DAG(
   'sample_dag',
   default_args=default_args,
