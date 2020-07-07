@@ -18,7 +18,7 @@ default_args = {
 }
 
 dag = DAG(
-  'sample_dag',
+  'sample_dag_agora_vai',
   default_args=default_args,
   description='Sample Dag',
   schedule_interval=timedelta(days=1),
