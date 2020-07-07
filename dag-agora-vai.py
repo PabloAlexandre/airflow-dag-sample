@@ -31,12 +31,11 @@ hello = PythonOperator(
     dag=dag,
 )
 
-for i in range(5):
-  task = PythonOperator(
-    task_id='sleep_for_' + str(i),
-    python_callable=sleep,
-    op_kwargs={'time': float(i) / 10},
-    dag=dag,
-  )
+task = PythonOperator(
+  task_id='sleep_for_' + 1,
+  python_callable=sleep,
+  op_kwargs={'time': 1 },
+  dag=dag,
+)
 
-  hello >> task
+hello >> task
