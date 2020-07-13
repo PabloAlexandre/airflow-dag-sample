@@ -3,11 +3,11 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
 
-def sleep(time):
+def sleep(time, **kwargs):
   print(f"Sleeping {time} seconds")
   time.sleep(random_base)
 
-def welcome(conf):
+def welcome(ds, **kwargs):
   print('Hello!')
 
 default_args = {
