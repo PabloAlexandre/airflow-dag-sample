@@ -7,7 +7,7 @@ def sleep(time):
   print(f"Sleeping {time} seconds")
   time.sleep(random_base)
 
-def welcome(self):
+def welcome(conf):
   print('Hello!')
 
 default_args = {
