@@ -1,11 +1,12 @@
 from datetime import timedelta, datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+import time
 
 
-def sleep(time, **kwargs):
-  print(f"Sleeping {time} seconds")
-  time.sleep(time)
+def sleep(seconds, **kwargs):
+  print(f"Sleeping {seconds} seconds")
+  time.sleep(seconds)
 
 def welcome(ds, **kwargs):
   print('Hello!')
@@ -34,7 +35,7 @@ hello = PythonOperator(
 task = PythonOperator(
   task_id='sleep_for_1',
   python_callable=sleep,
-  op_kwargs={'time': 1 },
+  op_kwargs={'seconds': 1 },
   dag=dag,
 )
 
