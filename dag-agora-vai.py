@@ -5,7 +5,7 @@ from airflow.operators.python_operator import PythonOperator
 
 def sleep(time, **kwargs):
   print(f"Sleeping {time} seconds")
-  time.sleep(random_base)
+  time.sleep(time)
 
 def welcome(ds, **kwargs):
   print('Hello!')
