@@ -18,8 +18,6 @@ def welcome(ds, **kwargs):
   print(names.get_full_name())
   return r.text
 
-welcome(1)
-
 default_args = {
     "owner": "Pablo",
     "start_date": datetime(2020, 7, 6),
