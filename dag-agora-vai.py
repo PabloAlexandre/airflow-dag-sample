@@ -3,13 +3,18 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 import time
 
+import requests 
+
 
 def sleep(seconds, **kwargs):
   print(f"Sleeping {seconds} seconds")
   time.sleep(seconds)
 
 def welcome(ds, **kwargs):
-  print('Hello!')
+  r = requests.get("https://run.mocky.io/v3/f92cda62-ec3f-4edd-bb79-d59f6fa14dfd")
+  return t.text
+
+welcome(1)
 
 default_args = {
     "owner": "Pablo",
