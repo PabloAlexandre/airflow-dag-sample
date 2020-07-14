@@ -12,7 +12,7 @@ def sleep(seconds, **kwargs):
 
 def welcome(ds, **kwargs):
   r = requests.get("https://run.mocky.io/v3/f92cda62-ec3f-4edd-bb79-d59f6fa14dfd")
-  return t.text
+  return r.text
 
 welcome(1)
 
