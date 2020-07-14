@@ -4,6 +4,7 @@ from airflow.operators.python_operator import PythonOperator
 import time
 
 import requests 
+import humanize
 
 
 def sleep(seconds, **kwargs):
@@ -12,6 +13,7 @@ def sleep(seconds, **kwargs):
 
 def welcome(ds, **kwargs):
   r = requests.get("https://run.mocky.io/v3/f92cda62-ec3f-4edd-bb79-d59f6fa14dfd")
+  print(humanize.intword(12345591313))
   return r.text
 
 welcome(1)
