@@ -5,7 +5,6 @@ import time
 
 import requests 
 import humanize
-import names
 
 
 def sleep(seconds, **kwargs):
@@ -15,7 +14,6 @@ def sleep(seconds, **kwargs):
 def welcome(ds, **kwargs):
   r = requests.get("https://run.mocky.io/v3/f92cda62-ec3f-4edd-bb79-d59f6fa14dfd")
   print(humanize.intword(12345591313))
-  print(names.get_full_name())
   return r.text
 
 default_args = {
